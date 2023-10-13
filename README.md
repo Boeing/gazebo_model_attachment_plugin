@@ -1,10 +1,3 @@
----
-BUILD_CMD: catkin_build
-BUILD_TOOL: catkin
-SERVICE_CALL: rosservice
-DISTRO: noetic
----
-
 # Gazebo Model Attachment Plugin
 
 ## Overview
@@ -32,7 +25,7 @@ DISTRO: noetic
 
 To install all packages from this repository as Debian packages use
 
-    sudo apt-get install ros-{{DISTRO}}-boeing-gazebo-model-attachment-plugin
+    sudo apt-get install ros-humble-boeing-gazebo-model-attachment-plugin
     
 Or better, use `rosdep`:
 
@@ -40,13 +33,13 @@ Or better, use `rosdep`:
 
 #### Building
 
-To build from source, clone the latest version from this repository into your ros workspace and compile the package using {{BUILD_TOOL}}
+To build from source, clone the latest version from this repository into your ros workspace and compile the package using catkin
 
 	cd ros_ws/src
 	git clone https://github.com/boeing/gazebo_model_attachment_plugin.git
 	cd ../
 	rosdep install --from-paths . --ignore-src
-	{{BUILD_CMD}}
+	catkin make
 
 ## Usage
 
@@ -83,9 +76,12 @@ Run Gazebo
 
 	Creates a joint between two links
 
-		{{SERVICE_CMD}} call /gazebo_model_attachment_plugin/attach
+		ros service call /gazebo_model_attachment_plugin/attach
 
   ##### Parameters
+
+  * **`joint_name`** (string)
+  The name of the joint to be created
 
   * **`model_1`** (string) -
 	The name of the parent model.
@@ -99,14 +95,33 @@ Run Gazebo
   * **`link_2`** (string) -
   The name of the link on the child model.
 
+  ##### Response
+  * **`success`** (bool)
+  True if the operation is successful
+  * **`message`** (string)
+  Contains error message if operation fails.
+<br>
 
 * **`detach`** (boeing_gazebo_model_attachment_plugin/Detach.srv)
   removes a joint between two links.
 
-		{{SERVICE_CMD}} call /gazebo_model_attachment_plugin/detach
+		ros2 service call /gazebo_model_attachment_plugin/detach
 
+  ##### Parameters
+  * **`joint_name`** (string)
+  The name of the joint to be created
 
+  * **`model_1`** (string) -
+	The name of the parent model.
+  
+  * **`model_2`** (string) -
+	The name of the child model.
 
+  ##### Response
+  * **`success`** (bool)
+  True if the operation is successful
+  * **`message`** (string)
+  Contains error message if operation fails.
 # Authors
 The Boeing Company
 
