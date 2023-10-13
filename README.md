@@ -1,7 +1,7 @@
 | Distro | CI Status |
 | ------ | --------- |
-| Humble | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=noetic)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
-| Noetic | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=humble)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
+| Noetic | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=noetic)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
+| Humble | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=humble)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
 
 # Gazebo Model Attachment Plugin
 
