@@ -30,7 +30,7 @@
 
 To install all packages from this repository as Debian packages use
 
-    sudo apt-get install ros-humble-boeing-gazebo-model-attachment-plugin
+    sudo apt-get install ros-noetic-boeing-gazebo-model-attachment-plugin
     
 Or better, use `rosdep`:
 
