@@ -6,7 +6,7 @@
     <maintainer email="Jason.Cochrane@boeing.com">Boeing</maintainer>
     <maintainer email="christopher.mcdermott2@boeing.com">Boeing</maintainer>
     <author>Boeing</author>
-    <license>Boeing Proprietary</license>
+    <license>Apache-2.0</license>
 
     <buildtool_depend>catkin</buildtool_depend>
 
