@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
     <name>gazebo_model_attachment_plugin</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <description>Model Attachment Plugin</description>
     <maintainer email="Jason.Cochrane@boeing.com">Boeing</maintainer>
     <maintainer email="christopher.mcdermott2@boeing.com">Boeing</maintainer>
