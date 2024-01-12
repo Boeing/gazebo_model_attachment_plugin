@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(gazebo_model_attachment_plugin)
+project(boeing_gazebo_model_attachment_plugin)
 
 add_definitions(-std=c++14)
 

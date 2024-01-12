@@ -1,7 +1,7 @@
 | Distro | CI Status |
 | ------ | --------- |
-| Noetic | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=noetic)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
-| Humble | [![CI](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=humble)](https://github.com/Boeing/gazebo_model_attachment_plugin/actions/workflows/main.yml) |
+| Noetic | [![CI](https://github.com/Boeing/boeing_gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=noetic)](https://github.com/Boeing/boeing_gazebo_model_attachment_plugin/actions/workflows/main.yml) |
+| Humble | [![CI](https://github.com/Boeing/boeing_gazebo_model_attachment_plugin/actions/workflows/main.yml/badge.svg?branch=humble)](https://github.com/Boeing/boeing_gazebo_model_attachment_plugin/actions/workflows/main.yml) |
 
 # Gazebo Model Attachment Plugin
 
@@ -41,7 +41,7 @@ Or better, use `rosdep`:
 To build from source, clone the latest version from this repository into your ros workspace and compile the package using catkin
 
 	cd ros_ws/src
-	git clone https://github.com/boeing/gazebo_model_attachment_plugin.git
+	git clone https://github.com/boeing/boeing_gazebo_model_attachment_plugin.git
 	cd ../
 	rosdep install --from-paths . --ignore-src
 	catkin make
@@ -57,7 +57,7 @@ Add the plugin to your world file
     <sdf version='1.6'>
     <world name='default'>
 
-     <plugin name="model_attachment" filename="libgazebo_model_attachment_plugin_lib.so"></plugin>
+     <plugin name="model_attachment" filename="libboeing_gazebo_model_attachment_plugin_lib.so"></plugin>
         
         <include>
           <uri>model://ground_plane</uri>
@@ -81,7 +81,7 @@ Run Gazebo
 
 	Creates a joint between two links
 
-		ros service call /gazebo_model_attachment_plugin/attach
+		ros service call /boeing_gazebo_model_attachment_plugin/attach
 
   ##### Parameters
 
@@ -110,7 +110,7 @@ Run Gazebo
 * **`detach`** (boeing_gazebo_model_attachment_plugin/Detach.srv)
   removes a joint between two links.
 
-		ros2 service call /gazebo_model_attachment_plugin/detach
+		ros2 service call /boeing_gazebo_model_attachment_plugin/detach
 
   ##### Parameters
   * **`joint_name`** (string)

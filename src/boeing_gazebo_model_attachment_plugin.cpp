@@ -1,5 +1,5 @@
 // Copyright 2018 Boeing
-#include <gazebo_model_attachment_plugin/gazebo_model_attachment_plugin.h>
+#include <boeing_gazebo_model_attachment_plugin/boeing_gazebo_model_attachment_plugin.h>
 
 #include <gazebo/physics/World.hh>
 #include <sdf/sdf.hh>
@@ -28,8 +28,8 @@ void ModelAttachmentPlugin::Load(physics::WorldPtr world, sdf::ElementPtr)
     detach_srv_ = nh_.advertiseService("detach", &ModelAttachmentPlugin::detachCallback, this);
 }
 
-bool ModelAttachmentPlugin::attachCallback(gazebo_model_attachment_plugin::Attach::Request& req,
-                                           gazebo_model_attachment_plugin::Attach::Response& res)
+bool ModelAttachmentPlugin::attachCallback(boeing_gazebo_model_attachment_plugin::Attach::Request& req,
+                                           boeing_gazebo_model_attachment_plugin::Attach::Response& res)
 {
     ROS_INFO_STREAM("Received request to attach model: '" << req.model_name_1 << "' to '" << req.model_name_2);
 
@@ -102,8 +102,8 @@ bool ModelAttachmentPlugin::attachCallback(gazebo_model_attachment_plugin::Attac
 }
 
 // cppcheck-suppress constParameterCallback
-bool ModelAttachmentPlugin::detachCallback(gazebo_model_attachment_plugin::Detach::Request& req,
-                                           gazebo_model_attachment_plugin::Detach::Response& res)
+bool ModelAttachmentPlugin::detachCallback(boeing_gazebo_model_attachment_plugin::Detach::Request& req,
+                                           boeing_gazebo_model_attachment_plugin::Detach::Response& res)
 {
     ROS_INFO_STREAM("Received request to detach model: '" << req.model_name_1 << "' from '" << req.model_name_2);
 

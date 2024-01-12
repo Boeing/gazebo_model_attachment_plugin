@@ -9,7 +9,7 @@ from gazebo_msgs.srv import GetModelState, GetModelStateRequest, GetModelStateRe
 from gazebo_msgs.srv import SetModelState, SetModelStateRequest, SetModelStateResponse
 from geometry_msgs.msg import Pose, Twist, Point, Quaternion, Vector3
 
-from gazebo_model_attachment_plugin.gazebo_client import GazeboModelAttachmentClient
+from boeing_gazebo_model_attachment_plugin.gazebo_client import GazeboModelAttachmentClient
 
 
 class TestPlugin(unittest.TestCase):
@@ -145,5 +145,5 @@ class TestPlugin(unittest.TestCase):
 if __name__ == '__main__':
     rospy.init_node('test_plugin')
 
-    rostest.rosrun('gazebo_model_attachment_plugin',
+    rostest.rosrun('boeing_gazebo_model_attachment_plugin',
                    'test_plugin', TestPlugin)

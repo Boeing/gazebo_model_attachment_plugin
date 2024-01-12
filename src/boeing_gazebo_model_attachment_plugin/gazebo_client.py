@@ -4,8 +4,8 @@ import logging
 
 import rospy
 
-from gazebo_model_attachment_plugin.srv import Attach, AttachRequest, AttachResponse
-from gazebo_model_attachment_plugin.srv import Detach, DetachRequest, DetachResponse
+from boeing_gazebo_model_attachment_plugin.srv import Attach, AttachRequest, AttachResponse
+from boeing_gazebo_model_attachment_plugin.srv import Detach, DetachRequest, DetachResponse
 
 logger = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-    <name>gazebo_model_attachment_plugin</name>
+    <name>boeing_gazebo_model_attachment_plugin</name>
     <version>1.0.2</version>
     <description>Model Attachment Plugin</description>
     <maintainer email="Jason.Cochrane@boeing.com">Boeing</maintainer>
@@ -25,4 +25,3 @@
         <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}"/>
     </export>
 </package>
-

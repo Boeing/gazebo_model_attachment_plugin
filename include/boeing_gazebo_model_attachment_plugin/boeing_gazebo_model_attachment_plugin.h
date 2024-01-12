@@ -1,10 +1,10 @@
-#ifndef GAZEBO_MODEL_ATTACHMENT_PLUGIN_H
-#define GAZEBO_MODEL_ATTACHMENT_PLUGIN_H
+#ifndef BOEING_GAZEBO_MODEL_ATTACHMENT_PLUGIN_H
+#define BOEING_GAZEBO_MODEL_ATTACHMENT_PLUGIN_H
 
 #include <boost/thread.hpp>
 #include <boost/thread/mutex.hpp>
-#include <gazebo_model_attachment_plugin/Attach.h>
-#include <gazebo_model_attachment_plugin/Detach.h>
+#include <boeing_gazebo_model_attachment_plugin/Attach.h>
+#include <boeing_gazebo_model_attachment_plugin/Detach.h>
 #include <ros/ros.h>
 
 #include <gazebo/common/Events.hh>
@@ -33,10 +33,10 @@ class ModelAttachmentPlugin : public WorldPlugin
   private:
     physics::WorldPtr world_;
 
-    bool attachCallback(gazebo_model_attachment_plugin::Attach::Request& req,
-                        gazebo_model_attachment_plugin::Attach::Response& res);
-    bool detachCallback(gazebo_model_attachment_plugin::Detach::Request& req,
-                        gazebo_model_attachment_plugin::Detach::Response& res);
+    bool attachCallback(boeing_gazebo_model_attachment_plugin::Attach::Request& req,
+                        boeing_gazebo_model_attachment_plugin::Attach::Response& res);
+    bool detachCallback(boeing_gazebo_model_attachment_plugin::Detach::Request& req,
+                        boeing_gazebo_model_attachment_plugin::Detach::Response& res);
 
     void attach(const std::string& joint_name, physics::ModelPtr m1, physics::ModelPtr m2, physics::LinkPtr l1,
                 physics::LinkPtr l2);
