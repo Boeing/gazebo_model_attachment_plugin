@@ -186,7 +186,7 @@ namespace gazebo
         ignition::math::Pose3d l2rl = l2->RelativePose();
         ignition::math::Pose3d p = (m1wp * l1rl * l2rl.Inverse());
         const bool is_paused = world_->IsPaused();
-        world_->SetPaused(true);
+        // world_->SetPaused(true);
         m2->SetWorldPose(p);
 
         physics::JointPtr joint = m1->CreateJoint(joint_name, "fixed", l1, l2);

@@ -71,7 +71,7 @@ Run Gazebo
 
 	Creates a joint between two links
 
-		ros2 service call /boeing_gazebo_model_attachment_plugin/attach
+		ros2 service call /gazebo/attach
 
   ##### Parameters
 
@@ -100,7 +100,7 @@ Run Gazebo
 * **`detach`** (boeing_gazebo_model_attachment_plugin/Detach.srv)
   removes a joint between two links.
 
-		ros2 service call /boeing_gazebo_model_attachment_plugin/detach
+		ros2 service call /gazebo/detach
 
   ##### Parameters
   * **`joint_name`** (string)
