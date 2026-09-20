@@ -11,6 +11,28 @@
 namespace gazebo
 {
 
+    namespace
+    {
+        class PauseGuard
+        {
+        public:
+            explicit PauseGuard(const physics::WorldPtr &world)
+                : world_(world), was_paused_(world_->IsPaused())
+            {
+                world_->SetPaused(true);
+            }
+
+            ~PauseGuard()
+            {
+                world_->SetPaused(was_paused_);
+            }
+
+        private:
+            physics::WorldPtr world_;
+            bool was_paused_;
+        };
+    }
+
     ModelAttachmentPlugin::ModelAttachmentPlugin()
     {
     }
@@ -40,6 +62,8 @@ namespace gazebo
     {
         RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"),
                            "Received request to attach model: '" << req->model_name_1 << "' to '" << req->model_name_2);
+
+        PauseGuard pause_guard(world_);
 
         // block any other physics pose updates
         boost::recursive_mutex::scoped_lock plock(*(world_->Physics()->GetPhysicsUpdateMutex()));
@@ -185,8 +209,6 @@ namespace gazebo
         ignition::math::Pose3d l1rl = l1->RelativePose();
         ignition::math::Pose3d l2rl = l2->RelativePose();
         ignition::math::Pose3d p = (m1wp * l1rl * l2rl.Inverse());
-        const bool is_paused = world_->IsPaused();
-        world_->SetPaused(true);
         m2->SetWorldPose(p);
 
         physics::JointPtr joint = m1->CreateJoint(joint_name, "fixed", l1, l2);
@@ -195,7 +217,6 @@ namespace gazebo
             throw std::runtime_error("CreateJoint returned nullptr");
 
         m1->AddChild(m2);
-        world_->SetPaused(is_paused);
     }
 
     void ModelAttachmentPlugin::detach(const std::string &joint_name, physics::ModelPtr m1, physics::ModelPtr m2)
